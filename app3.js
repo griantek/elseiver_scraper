@@ -1,5 +1,4 @@
 require('dotenv').config(); // Load environment variables from .env file
-const fetch = require('node-fetch'); // Use CommonJS syntax for importing node-fetch
 const sqlite3 = require('sqlite3').verbose();
 const JournalScraper = require('./JournalScraper.js');
 
@@ -8,6 +7,7 @@ const initialDelay = 1000;
 const backoffFactor = 2;
 
 async function fetchWithRetry(url, options, retries = 0) {
+    const { default: fetch } = await import('node-fetch');
     try {
         const response = await fetch(url, options);
         if (!response.ok) {

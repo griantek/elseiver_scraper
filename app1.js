@@ -36,7 +36,7 @@ async function fetchAllPages() {
     let totalJournals = 0;
     let processedJournals = 0;
 
-    for (let page = 105; page <= 211; page++) {
+    for (let page = 1; page <= 106; page++) {
         const postData = {
             query: "",
             page: page,
@@ -123,7 +123,7 @@ async function fetchAllPages() {
         // Small delay between requests
         await new Promise(resolve => setTimeout(resolve, 1000));
     }
-    await scraper.close(); // Close the database connection
+    await scraper.close();
     return totalJournals;
 }
 

@@ -127,9 +127,11 @@ async function fetchAllPages() {
     return totalJournals;
 }
 
-try {
-    const totalProcessed = await fetchAllPages();
-    console.log(`All data fetched and stored in database. Total journals processed: ${totalProcessed}`);
-} catch (error) {
-    console.error('Failed to fetch and store all pages:', error);
-}
+(async () => {
+    try {
+        const totalProcessed = await fetchAllPages();
+        console.log(`All data fetched and stored in database. Total journals processed: ${totalProcessed}`);
+    } catch (error) {
+        console.error('Failed to fetch and store all pages:', error);
+    }
+})();

@@ -1,9 +1,6 @@
 const { JSDOM } = require('jsdom');
 const sqlite3 = require('sqlite3').verbose();
 const axios = require('axios'); // Add axios for HTTP requests
-const { Builder, By, until } = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
-const fs = require('fs');
 const { performance } = require('perf_hooks'); // Add performance API
 
 class JournalScraper {

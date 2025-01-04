@@ -37,7 +37,7 @@ require('dotenv').config(); // Load environment variables from .env file
         let totalJournals = 0;
         let processedJournals = 0;
 
-        for (let page = 1; page <= totalPages; page++) {
+        for (let page = 1; page <= 106; page++) {
             const postData = {
                 query: "",
                 page: page,
